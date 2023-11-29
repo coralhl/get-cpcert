@@ -8,7 +8,7 @@ exit 1
 function download() {
 mkdir -p libs
 wget -O libs/openssl.zip -c https://codeload.github.com/openssl/openssl/zip/OpenSSL_1_1_1-stable || die "download openssl"
-wget -O libs/gost-engine.zip -c https://codeload.github.com/gost-engine/engine/zip/1b374532c2d494710c39371e83c197d08c65e8bc || die "download gost-engine"
+wget -O libs/gost-engine.zip -c https://codeload.github.com/gost-engine/engine/zip/739f957615eb33a33a6485ae7cf29c7c679fd59a || die "download gost-engine"
 wget -O libs/cmake-3.27.9.tar.gz -c https://github.com/Kitware/CMake/releases/download/v3.27.9/cmake-3.27.9.tar.gz || die "download cmake"
 }
 
@@ -20,7 +20,7 @@ function unpack() {
 cd libs
 unzip openssl.zip          || die "unpack openssl"
 unzip gost-engine.zip      || die "unpack gost-engine"
-ln -s engine-1b374532c2d494710c39371e83c197d08c65e8bc engine || die "ln gost-engine"
+ln -s engine-739f957615eb33a33a6485ae7cf29c7c679fd59a engine || die "ln gost-engine"
 tar xf cmake-3.27.9.tar.gz || die "unpack cmake"
 cd ..
 }
